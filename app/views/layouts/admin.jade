@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container-fluid.main
+      nav.navbar.navbar-default.navbar-fixed-top
+        .container-fluid
+          .navbar-header
+            a.navbar-brand(href="/") UberAdmin
+      .row.main
+        aside.col-md-2.menu
+          ul.nav.nav-pills.nav-stacked
+            li
+                a(href='/') Dasboard
+            li
+              a(href='/cars') Vehiculos
+            li
+              a(href='/drivers') Conductores
+            li
+              a(href="/trips") Viajes
+            li
+              a(href="/gastos") Gastos
+            li
+              a(href='/logout') Salir  
+        .col-md-10
+          block content
+

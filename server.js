@@ -14,8 +14,8 @@ var morgan  = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-
 var configDB = require('./config/database.js');
+
 
 //configuration =======
 
@@ -25,6 +25,7 @@ require('./config/passport')(passport);
 app.use(morgan('dev')); 
 app.use(cookieParser());
 app.use(bodyParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
@@ -36,8 +37,8 @@ app.use(passport.session());
 app.use(flash()); 
 
 // routes =========================================
-require('./app/routes.js')(app, passport);
-
+require('./app/routes/routes.js')(app, passport);
+require('./app/routes/cars.js')(app, passport);
 // development error handler
 if (app.get('env') === 'development') {
     mongoose.connect(configDB.url,function(err,res){

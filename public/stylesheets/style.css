@@ -1,0 +1,17 @@
+html, body, .main{
+    height:100%;
+}
+.main{
+    padding-top:25px;
+}
+.navbar-default{
+    background-color:#493d55;
+} 
+.menu{
+    height: 100%;
+    background-color: #493d55;
+}
+.nav-pills>li>a{
+    color:rgba(255,255,255,.7);
+}
+
